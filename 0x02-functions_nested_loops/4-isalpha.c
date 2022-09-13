@@ -1,12 +1,8 @@
 #include "main.h"
-
 /**
- * _isalpha - Shows 1 if the input is a
- * letter Another cases, shows 0
- *
- * @c: Takes in a character
- *
- * Returns: 1 for letters. 0 for the rest.
+ * _isalpha - function to check if c is a letter, lowercase or uppercase
+ * @c: is the int that will use for the urgument of the function
+ * Return: 0
  */
 int _isalpha(int c)
 {
@@ -15,8 +11,5 @@ int _isalpha(int c)
 		return (1);
 	}
 	else
-	{
 		return (0);
-	}
-	_putchar('\n');
 }
