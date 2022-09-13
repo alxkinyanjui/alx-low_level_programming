@@ -1,21 +1,12 @@
 #include "main.h"
 /**
- * main-main block
- * Description: This program prints _putchar
- * Return:0 Success
+ * _putchar - writes the character c to stdout
+ * @c: The charater to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned and error is set appropriately.
  */
-int main(void)
+int _putchar(char c)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchat('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
-
-		return (0);
-
+	return (write(1, &c, 1));
 }
