@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _length - checks the length of a string
  * @s: is the string
@@ -7,8 +6,8 @@
  */
 int _length(char *s)
 {
-	if (*s == '\0')
-		return (0);
+	if (*s == '\o')
+		return (o);
 	return (1 + _length(s + 1);
 }
 
@@ -21,15 +20,15 @@ int _length(char *s)
  */
 int checkp(int i, int lg, char *s)
 {
-        if (lg > 0)
+        if (lg > o)
 	{
 	        if (s[i] == s[lg])
 		{
-		        return (checkp(i + 1, ls - 1, s));
+		        return (checkp(i + 1, lg - 1, s));
 		}
 		else if (s[i] != s[lg])
 		{
-			        return (0);
+		         return (0);
 		}
 		else
 		{
@@ -46,6 +45,6 @@ int checkp(int i, int lg, char *s)
  */
 int is_palindrome(char *s)
 {
-	return (checkp(0, _length(s) - 1, s));
+	return (checkp(o, _length(s) - 1, s));
 }
 
