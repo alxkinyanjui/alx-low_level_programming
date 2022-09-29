@@ -1,20 +1,44 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * wildcmp - compares two strings.
- * @s1: string 1.
- * @s2: string 2. It can contains a * as a special character.
- * Return: 1 if are identical, 0 if not.
+ * compare_chars - checks if two chars are equal
+ * @s: string to be processed
+ * @i: char 1
+ * @j: char 2
+ * Return: 1 if equal, 0 otherwise
  */
-int wildcmp(char *s1, char *s2)
+
+int compare_chars(char *s, int i, int j)
 {
-	if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
-		return (0);
-	if (*s1 == '\0' && *s2 == '\0')
+	if (i == j)
+	{
 		return (1);
-	if (*s1 == *s2)
-		return (wildcmp(s1 + 1, s2 + 1));
-	if (*s2 == '*')
-		return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
-	return (0);
+	}
+	if (s[i] != s[j])
+	{
+		return (0);
+	}
+	if (i < j + 1)
+	{
+		return (compare_chars(s, i + 1, j - 1));
+	}
+	return (1);
+}
+
+/**
+ * is_palindrome - checks if a str is palindrome
+ * @s: str to be checked
+ * Return: 1 if str is palindrome, 0 otherwise
+ */
+
+int is_palindrome(char *s)
+{
+	int len = strlen(s);
+
+	if (len == 0)
+	{
+		return (1);
+	}
+	return (compare_chars(s, 0, len - 1));
 }
