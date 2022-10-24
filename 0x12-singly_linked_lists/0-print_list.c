@@ -1,27 +1,23 @@
 #include "lists.h"
-
 /**
- * print_list - function that prints str attribute if a linked list
- * @h: node of a linked list
- *
- * Return: length of the linked list
+ * print_list - prints all the elements of a list_t list.
+ * @h: singly linked list.
+ * Return: number of elements in the list.
  */
+
 size_t print_list(const list_t *h)
 {
-	int len_linked_list = 0;
+	size_t nelem;
 
+	nelem = 0;
 	while (h != NULL)
 	{
-		if (h->str)
-		{
-			printf("[%d] %s\n", h->len, h->str);
-		}
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
 		else
-		{
-			printf("[0] (nil)\n");
-		}
-		len_linked_list++;
+			printf("[%d] %s\n", h->len, h->str);
 		h = h->next;
+		nelem++;
 	}
-	return (len_linked_list);
+	return (nelem);
 }
