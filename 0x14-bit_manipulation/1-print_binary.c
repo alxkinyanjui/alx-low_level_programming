@@ -1,44 +1,22 @@
 #include "main.h"
 
 /**
- * print_binary - function that prints the binary of n
- * @n: number to be printed
+ * print_binary - prints the binary representation
+ * of a number.
+ * @n: unsigned long int.
  *
- * Return: void
+ * Return: no return.
  */
 void print_binary(unsigned long int n)
 {
-	signed long int size;
-	char num_in_binary;
-	int print_zeros = 0;
-
-	size = sizeof(n) * 8 - 1;
-
-	if (n == 0)
+	if (n >> 0)
 	{
-		putchar('0');
-		return;
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
 	}
-	else if (n == 1)
+	else
 	{
-		putchar('1');
-		return;
-	}
-	while (size >= 0)
-	{
-		num_in_binary = (n >> size) & 1;
-		if (print_zeros == 1)
-		{
-			putchar(num_in_binary + '0');
-		}
-		else
-		{
-			if (num_in_binary == 1)
-			{
-				putchar(num_in_binary + '0');
-				print_zeros = 1;
-			}
-		}
-		size -= 1;
+		_putchar('0');
 	}
 }
